@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export default function FormattedDate(props) {
   let days = [
@@ -10,12 +11,12 @@ export default function FormattedDate(props) {
     "Friday",
     "Saturday",
   ];
-  let day = props.date.getDay();
+  let day = days[props.date.getDay()];
   let hours = props.date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = props.dae.getMinutes();
+  let minutes = props.date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
